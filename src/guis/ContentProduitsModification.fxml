@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="content_area" prefHeight="728.0" prefWidth="979.0" stylesheets="@../stylesheets/stylehseet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.ContentProduitsModificationController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="979.0" style="-fx-background-color: #fff;">
+            <children>
+                <VBox alignment="CENTER_LEFT">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                    <children>
+                        <Label prefHeight="32.0" prefWidth="302.0" styleClass="lbl2" text="Modification du Produit :" textFill="#757373">
+                            <font>
+                                <Font name="Calibri Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <HBox />
+                    </children>
+                </VBox>
+            <Label fx:id="labelProduit" prefHeight="32.0" prefWidth="270.0" styleClass="lbl2" textFill="#757373">
+               <font>
+                  <Font name="Calibri Bold" size="28.0" />
+               </font>
+            </Label>
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="336.0" prefWidth="979.0" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+         <children>
+            <AnchorPane fx:id="anchorpane" prefHeight="800.0" prefWidth="1600.0">
+               <children>
+                  <VBox prefHeight="653.0" prefWidth="541.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="438.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="Informations Produit :" />
+                        <Separator prefWidth="200.0" />
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="141.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="415.0" minWidth="10.0" prefWidth="380.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="200.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Réference" />
+                              <Label text="Nom" GridPane.rowIndex="1" />
+                              <Label text="Catégorie" GridPane.rowIndex="2" />
+                              <Label text="Prix" GridPane.rowIndex="3" />
+                              <Label text="Stock" GridPane.rowIndex="4" />
+                              <Label text="Description" GridPane.rowIndex="5" />
+                              <TextField fx:id="reference" prefHeight="25.0" prefWidth="357.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="nom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXComboBox fx:id="categorie" prefHeight="25.0" prefWidth="396.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="prix" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="stock" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Button fx:id="imageBtn" mnemonicParsing="false" onAction="#imageBtnAction" prefHeight="25.0" prefWidth="397.0" text="Modifier les Images" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" onAction="#modifierBtnAction" prefHeight="25.0" prefWidth="403.0" text="Modifier Produit" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="740.0" layoutY="17.0" prefHeight="620.0" prefWidth="268.0">
+                     <children>
+                        <AnchorPane fx:id="ankpaneIM" prefHeight="597.0" prefWidth="270.0" />
+                     </children></VBox>
+                  <VBox layoutX="986.0" layoutY="2.0" prefHeight="653.0" prefWidth="29.0" />
+               </children>
+            </AnchorPane>
+         </children>
+        </HBox>
+    </children>
+</VBox>

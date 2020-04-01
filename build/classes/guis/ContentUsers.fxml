@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="content_area" prefHeight="639.0" prefWidth="979.0" stylesheets="@../stylesheets/stylehseet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.ContentAreaController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="899.0" style="-fx-background-color: #fff;">
+            <children>
+                <VBox alignment="CENTER_LEFT">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                    <children>
+                        <Label prefHeight="32.0" prefWidth="245.0" styleClass="lbl2" text="Liste des utilisateurs" textFill="#757373">
+                            <font>
+                                <Font name="Calibri Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <HBox />
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <children>
+                      <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="256.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2" text="Total - Out of ? views">
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                          <effect>
+                              <DropShadow color="#f2e3e3" />
+                          </effect>
+                      </Label>
+                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="121.0" styleClass="content-area-circle-btns" text="Ajouter user">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton contentDisplay="CENTER" layoutX="10.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="300.0" prefWidth="774.0" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+         <children>
+            <TableView prefWidth="1600.0">
+              <columns>
+                  <TableColumn prefWidth="62.0" text="N" />
+                <TableColumn prefWidth="156.0" text="Username" />
+                <TableColumn prefWidth="230.0" text="Email" />
+                  <TableColumn minWidth="0.0" prefWidth="137.0" text="Telephone" />
+                  <TableColumn prefWidth="194.0" text="Address" />
+                  <TableColumn prefWidth="195.0" text="Derniere connexion" />
+              </columns>
+            </TableView>
+         </children>
+        </HBox>
+    </children>
+</VBox>

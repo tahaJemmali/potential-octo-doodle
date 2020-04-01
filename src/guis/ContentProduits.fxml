@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="content_area" prefHeight="728.0" prefWidth="979.0" stylesheets="@../stylesheets/stylehseet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.ContentProduitsController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="979.0" style="-fx-background-color: #fff;">
+            <children>
+                <VBox alignment="CENTER_LEFT">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                    <children>
+                        <Label prefHeight="32.0" prefWidth="245.0" styleClass="lbl2" text="Liste des Produits" textFill="#757373">
+                            <font>
+                                <Font name="Calibri Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <HBox />
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <children>
+                      <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2" text="Total - Out of ? views">
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                          <effect>
+                              <DropShadow color="#f2e3e3" />
+                          </effect>
+                      </Label>
+                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#AjoutProduitBtn" prefHeight="35.0" prefWidth="228.0" styleClass="content-area-circle-btns" text="Ajouter Nouveau produit">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton contentDisplay="CENTER" layoutX="10.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="336.0" prefWidth="979.0" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+         <children>
+            <AnchorPane prefHeight="800.0" prefWidth="1600.0">
+               <children>
+                  <JFXTabPane fx:id="mainTabPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                        <Tab fx:id="bookIssueTab" closable="false" styleClass="tab-main" text="                     Table View                                                                  ">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="594.0" prefWidth="979.0" AnchorPane.bottomAnchor="-37.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox fx:id="book_info" alignment="CENTER" prefHeight="21.0" prefWidth="853.0">
+                                             <children>
+                                                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="783.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow color="#f2e3e3" />
+                                                   </effect>
+                                                   <graphic>
+                                                      <TextField fx:id="Searsh" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="741.0" promptText="Search for a job, task or resume" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field">
+                                                         <font>
+                                                            <Font name="Calibri" size="16.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <TableView fx:id="TableProduitView" prefHeight="574.0" prefWidth="979.0">
+                                             <columns>
+                                                <TableColumn fx:id="N" prefWidth="52.0" text="N°" />
+                                                <TableColumn fx:id="Reference" prefWidth="129.0" text="Réference" />
+                                                <TableColumn fx:id="Nom" prefWidth="227.0" text="Nom" />
+                                                <TableColumn fx:id="Categorie" minWidth="0.0" prefWidth="122.0" text="Catégorie" />
+                                                <TableColumn fx:id="Prix" prefWidth="87.0" text="Prix (DT)" />
+                                                <TableColumn fx:id="Stock" prefWidth="93.0" text="Stock" />
+                                                <TableColumn fx:id="Date" prefWidth="133.0" text="Date d'ajout" />
+                                                <TableColumn fx:id="Action" prefWidth="132.0" text="Action" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="bookIssueTab1" closable="false" styleClass="tab-main" text="                 Image View                                                                   ">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="576.0" prefWidth="979.0" AnchorPane.bottomAnchor="-19.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox fx:id="book_info1" alignment="CENTER" prefHeight="21.0" prefWidth="853.0">
+                                             <children>
+                                                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="783.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow color="#f2e3e3" />
+                                                   </effect>
+                                                   <graphic>
+                                                      <TextField fx:id="Searsh1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="741.0" promptText="Search for a job, task or resume" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field">
+                                                         <font>
+                                                            <Font name="Calibri" size="16.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Pagination fx:id="paginator" minWidth="650.0" pageCount="5" prefHeight="531.0" prefWidth="979.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </AnchorPane>
+         </children>
+        </HBox>
+    </children>
+</VBox>
