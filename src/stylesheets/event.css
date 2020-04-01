@@ -1,0 +1,43 @@
+.label{
+    -fx-text-fill: black;
+}
+
+.content-area-circle-btns{
+    -fx-background-color: #fff;
+    -fx-background-radius: 100px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 100%;
+}
+.content-area-circle-btns:hover{
+    -fx-background-color: #0099ff;
+    -fx-background-radius: 100px;
+    -fx-text-fill: #fff;
+}
+
+.columns{
+   /* -fx-background-color: green;
+    -fx-opacity: 0.7;*/
+}
+
+.score{
+    -fx-background-color: orange;
+    -fx-opacity: 0.4;
+     -fx-text-fill: black;
+}
+.root{
+   -fx-background-color: whitesmoke;  
+}
+
+.button{
+    -fx-text-fill: black;
+    -fx-background-color: #009688;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+
+.button:hover, .button:focused{
+
+    -fx-background-color: #ffca12;
+
+}

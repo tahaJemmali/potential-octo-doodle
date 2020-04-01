@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="border_pane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.MainController">
+    <top>
+      <VBox prefHeight="55.0" prefWidth="1492.0" BorderPane.alignment="CENTER">
+         <children>
+             
+            <HBox fx:id="menubar" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="1519.0" style="-fx-background-color: #fff; -fx-border-color: #cccccc; -fx-border-width: 0px 0px 1px 0px;" stylesheets="@../stylesheets/stylehseet.css">
+               <children>
+                  <HBox prefHeight="54.0" prefWidth="81.0" />
+                  <HBox prefHeight="54.0" prefWidth="169.0">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children></HBox>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#open_sidebar" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                     <graphic>
+                     </graphic>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="REORDER" size="30" wrappingWidth="27.285714149475098" />
+                     </graphic>
+                  </JFXButton>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" styleClass="menu-bar-search-field-box" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="Searsh" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="888.0" promptText="Search for a job, task or resume" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Calibri" size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="image_profile" fitHeight="51.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                        <HBox fx:id="hidehbox" prefHeight="54.0" prefWidth="1.0" />
+                        <JFXButton alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                           <graphic>
+                           </graphic>
+                           <graphic>
+                              <ImageView fx:id="image_profile" fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="442.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                           <graphic>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="482.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                           <graphic>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

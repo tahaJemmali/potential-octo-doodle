@@ -1,0 +1,54 @@
+/* 
+    Created on : 11 Nov, 2017, 4:42:53 AM
+    Author     : afsal villan
+*/
+
+* {
+    -fx-primary : #000000;
+    -fx-secondary : #000000;
+    -fx-primarytext : -fx-primary;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1:#1976D2;
+}
+
+
+.root{
+    -fx-background-color: #FFFFFF   ;
+}
+
+.glyph-icon
+{
+    -fx-fill: -fx-primarytext;
+}
+
+.button{
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-primary;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+
+.button:hover, .button:focused{
+    -fx-border-color: -fx-primary;
+    -fx-background-color: #ffca12;
+    -fx-text-fill: -fx-primary;
+}
+
+.text-field
+{
+    -fx-text-fill: -fx-primarytext;
+    -fx-font-size : 12pt;
+    -jfx-focus-color: -fx-secondary;
+    -fx-text-fill: derive(-fx-secondary, 20%);
+}
+
+/*Login Screen Specific*/
+
+.wrong-credentials
+{
+    -jfx-unfocus-color: #ef5350;
+    -jfx-focus-color: #ef5350;
+}
