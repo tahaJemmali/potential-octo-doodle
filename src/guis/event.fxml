@@ -29,7 +29,7 @@
                 </VBox>
                 <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                     <children>
-                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#ajouter" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" stylesheets="@../stylesheets/stylehseet.css" text="Ajouter">
+                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#ajouter" prefHeight="35.0" prefWidth="45.0" styleClass="content-area-circle-btns" stylesheets="@../stylesheets/stylehseet.css" text=".">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -38,6 +38,9 @@
                             <HBox.margin>
                                 <Insets right="10.0" />
                             </HBox.margin>
+                             <graphic>
+                        <FontAwesomeIconView fill="#15ed76" glyphName="CALENDAR" rotate="11.3" size="20" wrappingWidth="5.0" />
+                     </graphic>
                         </JFXButton>
                         <JFXButton ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#supprimer" prefHeight="35.0" prefWidth="41.0" styleClass="content-area-circle-btns" stylesheets="@../stylesheets/stylehseet.css" text=".">
                             <font>
@@ -68,7 +71,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView glyphName="REFRESH" size="20" wrappingWidth="5.0" />
+                        <FontAwesomeIconView fill="#eb9c1c" glyphName="REFRESH" size="20" wrappingWidth="5.0" />
                      </graphic>
                      <HBox.margin>
                         <Insets right="10.0" />

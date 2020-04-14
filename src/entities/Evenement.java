@@ -22,6 +22,7 @@ public class Evenement {
     private int max_participant;
     private String location;
     private int score_id;
+    private User u;
 
     public Evenement() {
     }

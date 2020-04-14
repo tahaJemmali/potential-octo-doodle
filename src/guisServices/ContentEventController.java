@@ -126,7 +126,7 @@ public class ContentEventController implements Initializable {
 
     @FXML
     public void ajouter(ActionEvent event) throws IOException, InterruptedException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/evenement/addEvent.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/academiccalendar/ui/main/FXMLDocument.fxml"));
         Parent MainView2 = (Parent) loader.load();
         Scene MainScene2 = new Scene(MainView2);
         Stage stage = new Stage(StageStyle.UNDECORATED);
@@ -143,12 +143,12 @@ public class ContentEventController implements Initializable {
         ModelEventTable eventSelected = tableEvent.getSelectionModel().getSelectedItem();
         int id = ID.getCellData(tableEvent.getSelectionModel().getSelectedIndex());
         eventService.modifier(editedCell.getTableColumn().getId(), editedCell.getNewValue(), id);
-Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
- alert1.setHeaderText(null);
- alert1.setContentText("Modification Effectué");
- ButtonType daccord = new ButtonType("OK");
-  alert1.getButtonTypes().setAll(daccord);
-  alert1.showAndWait();
+        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+        alert1.setHeaderText(null);
+        alert1.setContentText("Modification Effectué");
+        ButtonType daccord = new ButtonType("OK");
+        alert1.getButtonTypes().setAll(daccord);
+        alert1.showAndWait();
     }
 
     public void ModiferImage(CellEditEvent editedCell) throws MalformedURLException, IOException, SQLException {
@@ -162,15 +162,17 @@ Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             int id = ID.getCellData(tableEvent.getSelectionModel().getSelectedIndex());
             eventService.modifier(editedCell.getTableColumn().getId(), selectedFile.getAbsolutePath(), id);
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
- alert1.setHeaderText(null);
- alert1.setContentText("Modification Effectué");
- ButtonType daccord = new ButtonType("OK");
-  alert1.getButtonTypes().setAll(daccord);
-  alert1.showAndWait();
+            alert1.setHeaderText(null);
+            alert1.setContentText("Modification Effectué");
+            ButtonType daccord = new ButtonType("OK");
+            alert1.getButtonTypes().setAll(daccord);
+            alert1.showAndWait();
         } else {
             System.out.println("file is not valid");
         }
     }
+
+ 
 
     /*
     *double click pour modifier
@@ -207,12 +209,12 @@ Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
         final ObservableList<Evenement> listEvenement2 = FXCollections.observableArrayList();
 
         if (tableEvent.getSelectionModel().getSelectedCells().isEmpty()) {
- Alert alert = new Alert(Alert.AlertType.ERROR);
- alert.setHeaderText("Oops !");
- alert.setContentText("Veuiller sélectionner l'évenement à supprimer !");
- ButtonType daccord = new ButtonType("D'accord");
-  alert.getButtonTypes().setAll(daccord);
-  alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Oops !");
+            alert.setContentText("Veuiller sélectionner l'évenement à supprimer !");
+            ButtonType daccord = new ButtonType("D'accord");
+            alert.getButtonTypes().setAll(daccord);
+            alert.showAndWait();
         } else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setHeaderText(null);
@@ -227,14 +229,15 @@ Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             if (result.get() == deleteEventButton) {
                 int id = ID.getCellData(tableEvent.getSelectionModel().getSelectedIndex());
                 eventService.SupprimerEvenement(id);
-           Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
- alert1.setHeaderText(null);
- alert1.setContentText("Supression Effectué");
- ButtonType daccord = new ButtonType("OK");
-  alert1.getButtonTypes().setAll(daccord);
-  alert1.showAndWait();
+                Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                alert1.setHeaderText(null);
+                alert1.setContentText("Supression Effectué");
+                ButtonType daccord = new ButtonType("OK");
+                alert1.getButtonTypes().setAll(daccord);
+                alert1.showAndWait();
             }
         }
 
     }
+
 }

@@ -46,11 +46,11 @@ public class EventService {
         try {
 
             String req = "SELECT * FROM Evenement";
-
             st = cnx.createStatement();
             ResultSet res = st.executeQuery(req);
 
             while (res.next()) {
+               
                 Evenement e = new Evenement();
                 e.setId(res.getInt(1));
                 e.setTitre(res.getString(2));

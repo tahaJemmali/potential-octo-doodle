@@ -33,9 +33,8 @@ public class VeloFahd extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        // Parent root = FXMLLoader.load(getClass().getResource("/guis/Login.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("/guis/event.fxml"));
-        //Parent root = FXMLLoader.load(getClass().getResource("/evenement/addEvent.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("/guis/Login.fxml"));
+       // Parent root = FXMLLoader.load(getClass().getResource("/guis/event.fxml"));
 
         Scene scene = new Scene(root);
         this.stage = primaryStage;
