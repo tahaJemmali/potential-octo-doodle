@@ -48,6 +48,7 @@ public class VeloFahd extends Application {
 		primaryStage.show();*/
         
         //with here 1
+        //System.out.println("^(?=.{0,4}$)^[1-9]\\d*$");
         Parent root = FXMLLoader.load(getClass().getResource("/guis/Login.fxml"));
 
         Scene scene = new Scene(root);

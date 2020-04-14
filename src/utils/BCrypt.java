@@ -611,11 +611,10 @@ public class BCrypt {
 			off = 3;
 		else {
 			minor = salt.charAt(2);
-			if (minor != 'y' || salt.charAt(3) != '$')
+			if (/*minor != 'y' ||*/ salt.charAt(3) != '$')
 				throw new IllegalArgumentException ("Invalid salt revision");
 			off = 4;
 		}
-//$2y$13$4SYjRU8ZQCBSLCPKUNqHSOsE/S.mA0Ab.4RQR1CKEU4aNdIdXxro.
 		// Extract number of rounds
 		if (salt.charAt(off + 2) > '$')
 			throw new IllegalArgumentException ("Missing salt rounds");

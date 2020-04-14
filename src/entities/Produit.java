@@ -12,17 +12,20 @@ import java.util.List;
  *
  * @author USER
  */
+
 public class Produit {
+    
     private int id;
     private String reference;
     private String name;
     private String category;
     private double price;
-    private int stock;
-    private Date date;
+    private int stock ;
+    private Date date ;
     private String description;
 
 
+    
     public int getId() {
         return id;
     }

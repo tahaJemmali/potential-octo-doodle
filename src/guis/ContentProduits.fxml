@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Pagination?>
@@ -32,17 +33,17 @@
                         <HBox />
                     </children>
                 </VBox>
+                <Label fx:id="total" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="113.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <effect>
+                        <DropShadow color="#f2e3e3" />
+                    </effect>
+                </Label>
                 <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                     <children>
-                      <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="192.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2" text="Total - Out of ? views">
-                          <font>
-                              <Font size="14.0" />
-                          </font>
-                          <effect>
-                              <DropShadow color="#f2e3e3" />
-                          </effect>
-                      </Label>
-                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#AjoutProduitBtn" prefHeight="35.0" prefWidth="228.0" styleClass="content-area-circle-btns" text="Ajouter Nouveau produit">
+                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#AjoutProduitBtn" prefHeight="35.0" prefWidth="228.0" styleClass="content-area-circle-btns" text="Ajouter un Nouveau produit">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -52,27 +53,7 @@
                                 <Insets right="10.0" />
                             </HBox.margin>
                         </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="10.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font>
-                            <graphic>
-                            </graphic>
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font>
-                            <graphic>
-                            </graphic>
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
+                        <JFXButton fx:id="excel" contentDisplay="CENTER" layoutX="10.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#excel" prefHeight="35.0" prefWidth="37.0" styleClass="content-area-circle-btns" text="  ">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -102,16 +83,27 @@
          <children>
             <AnchorPane prefHeight="800.0" prefWidth="1600.0">
                <children>
-                  <JFXTabPane fx:id="mainTabPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <JFXTabPane fx:id="mainTabPane" prefHeight="686.0" prefWidth="979.0" AnchorPane.bottomAnchor="-33.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <tabs>
                         <Tab fx:id="bookIssueTab" closable="false" styleClass="tab-main" text="                     Table View                                                                  ">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="979.0">
                                  <children>
-                                    <VBox prefHeight="594.0" prefWidth="979.0" AnchorPane.bottomAnchor="-37.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <VBox prefHeight="750.0" prefWidth="979.0" AnchorPane.bottomAnchor="-153.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <HBox fx:id="book_info" alignment="CENTER" prefHeight="21.0" prefWidth="853.0">
+                                          <HBox fx:id="book_info" alignment="CENTER" prefHeight="40.0" prefWidth="881.0">
                                              <children>
+                                                <Label fx:id="total1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="42.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow color="#f2e3e3" />
+                                                   </effect>
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="SEARCH" size="20" wrappingWidth="17.571428298950195" />
+                                                   </graphic>
+                                                </Label>
                                                 <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="783.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2">
                                                    <font>
                                                       <Font size="14.0" />
@@ -120,9 +112,9 @@
                                                       <DropShadow color="#f2e3e3" />
                                                    </effect>
                                                    <graphic>
-                                                      <TextField fx:id="Searsh" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="741.0" promptText="Search for a job, task or resume" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field">
+                                                      <TextField fx:id="Searsh" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="781.0" promptText="Chercher un produit, Réference, Nom, Catégorie, Date..." style="-fx-background-color: transparent;" styleClass="menu-bar-search-field">
                                                          <font>
-                                                            <Font name="Calibri" size="16.0" />
+                                                            <Font name="Calibri" size="18.0" />
                                                          </font>
                                                       </TextField>
                                                    </graphic>
@@ -132,16 +124,16 @@
                                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                              </VBox.margin>
                                           </HBox>
-                                          <TableView fx:id="TableProduitView" prefHeight="574.0" prefWidth="979.0">
+                                          <TableView fx:id="TableProduitView" prefHeight="639.0" prefWidth="979.0">
                                              <columns>
-                                                <TableColumn fx:id="N" prefWidth="52.0" text="N°" />
-                                                <TableColumn fx:id="Reference" prefWidth="129.0" text="Réference" />
-                                                <TableColumn fx:id="Nom" prefWidth="227.0" text="Nom" />
-                                                <TableColumn fx:id="Categorie" minWidth="0.0" prefWidth="122.0" text="Catégorie" />
-                                                <TableColumn fx:id="Prix" prefWidth="87.0" text="Prix (DT)" />
-                                                <TableColumn fx:id="Stock" prefWidth="93.0" text="Stock" />
-                                                <TableColumn fx:id="Date" prefWidth="133.0" text="Date d'ajout" />
-                                                <TableColumn fx:id="Action" prefWidth="132.0" text="Action" />
+                                                <TableColumn fx:id="N" prefWidth="60.0" style="-fx-alignment: CENTER;" text="N°" />
+                                                <TableColumn fx:id="Reference" prefWidth="201.0" style="-fx-alignment: CENTER;" text="Réference" />
+                                                <TableColumn fx:id="Nom" prefWidth="207.0" style="-fx-alignment: CENTER;" text="Nom" />
+                                                <TableColumn fx:id="Categorie" minWidth="0.0" prefWidth="143.0" style="-fx-alignment: CENTER;" text="Catégorie" />
+                                                <TableColumn fx:id="Prix" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Prix (DT)" />
+                                                <TableColumn fx:id="Stock" prefWidth="61.0" style="-fx-alignment: CENTER;" text="Stock" />
+                                                <TableColumn fx:id="Date" prefWidth="121.0" style="-fx-alignment: CENTER;" text="Date d'ajout" />
+                                                <TableColumn fx:id="Action" prefWidth="107.0" style="-fx-alignment: CENTER;" text="Action" />
                                              </columns>
                                           </TableView>
                                        </children>
@@ -166,7 +158,7 @@
                                                       <DropShadow color="#f2e3e3" />
                                                    </effect>
                                                    <graphic>
-                                                      <TextField fx:id="Searsh1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="741.0" promptText="Search for a job, task or resume" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field">
+                                                      <TextField fx:id="Searsh1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="741.0" promptText="Chercher un produit, Réference, Nom, Catégorie, Date..." style="-fx-background-color: transparent;" styleClass="menu-bar-search-field">
                                                          <font>
                                                             <Font name="Calibri" size="16.0" />
                                                          </font>

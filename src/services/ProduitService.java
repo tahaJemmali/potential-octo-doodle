@@ -189,6 +189,30 @@ public class ProduitService {
             System.out.println(ex);
         }
        }
+        public Produit getProduitId(Produit produit){
+           Produit p = new Produit();
+           try {
+            String req = "SELECT * FROM product where id = "+produit.getId();
+            
+            st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+            while (res.next()) {
+                //System.out.println(res.getString(3));
+                p.setId(res.getInt(1));
+                p.setReference(res.getString(2));
+                p.setName(res.getString(3));
+                p.setCategory(res.getString(4));
+                p.setPrice(res.getDouble(5));
+                p.setStock(res.getInt(6));
+                p.setDate(res.getDate(7));
+                p.setDescription(res.getString(8));
+            }
         
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
+        return p;
+       }
         
 }

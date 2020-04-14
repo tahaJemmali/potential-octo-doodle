@@ -19,14 +19,12 @@ import utils.BCrypt;
  */
 public class User {
 
-
-    
     private int id;
     private String username;
     private String password;
     private String email;
     private String address;
-    private String phone;
+    private int phone;
     private String roles;
     private String last_login;
     private int enabled;
@@ -60,7 +58,7 @@ public class User {
         this.address = address;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
@@ -100,7 +98,7 @@ public class User {
         return address;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
@@ -125,7 +123,7 @@ public class User {
         return "ID : "+id+" Username : "+username+" Password : "+password+" Email : "+email+" Address : "+address+" Phone : "
                 +phone+" Roles : "+roles+" Last login : "+last_login+" Enabled : "+enabled+" Photo : "+photo;
     }
-    @Override
+   @Override
    public boolean equals(Object o) {
 	if (o==null) {
 		System.out.println("Object null");
@@ -137,10 +135,13 @@ public class User {
                 /*System.out.println(this.getUsername());
                 System.out.println(e.getUsername());*/
                 //System.out.println("Alooooooo : "+ BCrypt.checkpw(e.getPassword(),this.getPassword()));
-                if (this.getUsername().equals(e.getUsername()) && BCrypt.checkpw(e.getPassword(),this.getPassword() ) )
+                if (this.getUsername().equals(e.getUsername()))
                 {
-                    //System.out.println("Object and this egaux");
+                    if (this.getPassword()!=null){
+                    if (BCrypt.checkpw(e.getPassword(),this.getPassword())){
                 return true;
+                            }
+                    }
                 }
                 else {
                     //System.out.println("Object and this NON egaux");

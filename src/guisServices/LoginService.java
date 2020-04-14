@@ -48,14 +48,22 @@ import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 /**
  *
@@ -69,11 +77,17 @@ public class LoginService implements Initializable {
 	private JFXPasswordField Password ;
         @FXML 
         private Button cancel ;
+        @FXML
+        private Label label_mdpo ;
+        @FXML
+        private AnchorPane anch;
+        @FXML
+        private StackPane stack;
         
         public static Stage stage ;
         
         private UserService userService ;
-        private List<User> ListUsers;
+        private static List<User> ListUsers;
         
         private static User user;
         static boolean Lbtest = false;
@@ -84,14 +98,18 @@ public class LoginService implements Initializable {
        Lbtest=false; //n r a l
        userService = new UserService();
        ListUsers = userService.getAllUser();
-       
+       init_mdpo();
         //Connecting.setVisible(false);
         
-        Username.setText("fahd");
-        Password.setText("123");
+        Username.setText("admin");
+        Password.setText("admin");
         
         System.out.println("Login Controller");
-        
+
+    }
+    
+    public static List<User> getListUsers(){
+        return ListUsers;
     }
     
      private void closeStage() {
@@ -131,55 +149,64 @@ public class LoginService implements Initializable {
 
     private void LoadLogin() throws IOException {
                
-        //change 2 here
-//                VeloFahd.stage.initStyle(StageStyle.UNDECORATED);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/guis/Main.fxml"));
                  Parent MainView2 = (Parent)loader.load();
                  Scene MainScene2 = new Scene(MainView2);
-                 //MainController mc  = (MainController) loader.getController();
-                 //mc.setUser(user);
 		
-		//Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow(); 
                 Stage stage = new Stage (StageStyle.UNDECORATED);
-                //MainWindow2.initStyle(StageStyle.UNDECORATED);
 		 
                  stage.setScene(MainScene2);
 		 stage.centerOnScreen();
                  this.stage = stage;
-                 //this.stage = MainWindow2;
-                 //MainWindow2.initStyle(StageStyle.UNDECORATED);
 		 stage.show();
-                
-                //with 2 here
-            /*Parent parent = FXMLLoader.load(getClass().getResource("/guis/Main.fxml"));
-            Stage stage = new Stage(StageStyle.DECORATED);
-            stage.setScene(new Scene(parent));
-            this.stage = stage;
-            stage.show();*/
-            
-            //LibraryAssistantUtil.setStageIcon(stage);
-                //with 2 here
     }
     
-   /* @FXML
-    private void LoginButtonAction(ActionEvent event) {
-        String uname = StringUtils.trimToEmpty(username.getText());
-        String pword = DigestUtils.shaHex(password.getText());
-
-        if (uname.equals(preference.getUsername()) && pword.equals(preference.getPassword())) {
-            closeStage();
-            loadMain();
-            LOGGER.log(Level.INFO, "User successfully logged in {}", uname);
-        }
-        else {
-            username.getStyleClass().add("wrong-credentials");
-            password.getStyleClass().add("wrong-credentials");
-        }
-    }*/
+     private void LoadMpdO() throws IOException {
+               
+       Parent root = FXMLLoader.load(getClass().getResource("/guis/Login_mdpo_1.fxml"));
+       Scene scene = label_mdpo.getScene();
+       root.translateXProperty().set(scene.getHeight());
+       stack.getChildren().add(root);
+       Timeline timeline = new Timeline();
+        KeyValue kv = new KeyValue(root.translateXProperty(), 0, Interpolator.LINEAR);
+        KeyFrame kf = new KeyFrame(Duration.seconds(0.2), kv);
+        timeline.getKeyFrames().add(kf);
+        timeline.setOnFinished(t -> {
+            stack.getChildren().remove(anch);
+        });
+        timeline.play();
+    }
+    
 
     @FXML
     private void Cancel(ActionEvent event) {
         System.exit(0);
+    }
+    
+    public void init_mdpo(){
+        label_mdpo.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent e) {
+            try {
+                LoadMpdO();
+                
+               /* Parent root = FXMLLoader.load(getClass().getResource("/guis/Login.fxml"));
+        Scene scene = new Scene(root);
+      //  primaryStage.getIcons().add(new Image("/images/logo.png"));
+       // this.stage = primaryStage;
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        Stage primaryStage = new Stage();
+        primaryStage.setScene(scene);
+        primaryStage.show();*/
+        
+            } catch (IOException ex) {
+                Logger.getLogger(LoginService.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    });
+        label_mdpo.styleProperty().bind(Bindings.when(label_mdpo.hoverProperty())
+                                      .then("-fx-underline: true;")
+                                      .otherwise(" -fx-underline: false;"));
     }
      
 }

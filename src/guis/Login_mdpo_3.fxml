@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stack" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.LoginService_mdpo_3">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="anch" prefHeight="452.0" prefWidth="367.0" stylesheets="@../stylesheets/stylesheet_login.css">
+         <children>
+            <ImageView fitHeight="104.0" fitWidth="200.0" layoutX="84.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="74.0" layoutY="130.0" text="Récupération de compte">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="label" layoutX="59.0" layoutY="164.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelEr" layoutX="70.0" layoutY="351.0" prefHeight="17.0" prefWidth="220.0" />
+            <JFXPasswordField fx:id="mdp" labelFloat="true" layoutX="74.0" layoutY="238.0" prefHeight="37.0" prefWidth="220.0" promptText="Nouveau mot de passe" />
+            <JFXPasswordField fx:id="mdp2" labelFloat="true" layoutX="74.0" layoutY="304.0" prefHeight="37.0" prefWidth="220.0" promptText="Confirmer mot de passe" />
+            <JFXButton fx:id="suivant" layoutX="213.0" layoutY="385.0" onAction="#Suivant" prefHeight="39.0" prefWidth="90.0" text="Suivant" />
+            <JFXButton fx:id="retour" layoutX="59.0" layoutY="385.0" onAction="#Retour" prefHeight="39.0" prefWidth="90.0" text="Retour" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

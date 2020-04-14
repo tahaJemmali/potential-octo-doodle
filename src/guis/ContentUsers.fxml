@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="content_area" prefHeight="639.0" prefWidth="979.0" stylesheets="@../stylesheets/stylehseet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.ContentAreaController">
+<VBox prefHeight="728.0" prefWidth="979.0" stylesheets="@../stylesheets/stylehseet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.ContentUserController">
     <children>
-        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="899.0" style="-fx-background-color: #fff;">
+        <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="979.0" style="-fx-background-color: #fff;">
             <children>
                 <VBox alignment="CENTER_LEFT">
                     <HBox.margin>
                         <Insets left="10.0" />
                     </HBox.margin>
                     <children>
-                        <Label prefHeight="32.0" prefWidth="245.0" styleClass="lbl2" text="Liste des utilisateurs" textFill="#757373">
+                        <Label prefHeight="32.0" prefWidth="245.0" styleClass="lbl2" text="Liste des Utilisateurs" textFill="#757373">
                             <font>
                                 <Font name="Calibri Bold" size="28.0" />
                             </font>
@@ -29,15 +34,7 @@
                 </VBox>
                 <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                     <children>
-                      <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="256.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2" text="Total - Out of ? views">
-                          <font>
-                              <Font size="14.0" />
-                          </font>
-                          <effect>
-                              <DropShadow color="#f2e3e3" />
-                          </effect>
-                      </Label>
-                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="121.0" styleClass="content-area-circle-btns" text="Ajouter user">
+                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#AddNewUser" prefHeight="35.0" prefWidth="228.0" styleClass="content-area-circle-btns" text="Ajouter un Nouveau User">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -47,36 +44,12 @@
                                 <Insets right="10.0" />
                             </HBox.margin>
                         </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="10.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font>
-                            <graphic>
-                            </graphic>
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font>
-                            <graphic>
-                            </graphic>
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </JFXButton>
-                        <JFXButton contentDisplay="CENTER" layoutX="110.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="content-area-circle-btns">
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font>
-                            <graphic>
-                            </graphic>
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </JFXButton>
+                  <JFXButton fx:id="excel" onAction="#excel" prefHeight="35.0" prefWidth="37.0" styleClass="content-area-circle-btns" text="  ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton text=" " />
                     </children>
                     <HBox.margin>
                         <Insets left="20.0" />
@@ -90,21 +63,75 @@
                 <Insets bottom="10.0" top="10.0" />
             </padding>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="300.0" prefWidth="774.0" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER" prefHeight="336.0" prefWidth="979.0" VBox.vgrow="ALWAYS">
             <VBox.margin>
                 <Insets />
             </VBox.margin>
          <children>
-            <TableView prefWidth="1600.0">
-              <columns>
-                  <TableColumn prefWidth="62.0" text="N" />
-                <TableColumn prefWidth="156.0" text="Username" />
-                <TableColumn prefWidth="230.0" text="Email" />
-                  <TableColumn minWidth="0.0" prefWidth="137.0" text="Telephone" />
-                  <TableColumn prefWidth="194.0" text="Address" />
-                  <TableColumn prefWidth="195.0" text="Derniere connexion" />
-              </columns>
-            </TableView>
+            <AnchorPane prefHeight="800.0" prefWidth="1600.0">
+               <children>
+                  <JFXTabPane prefHeight="686.0" prefWidth="979.0" AnchorPane.bottomAnchor="-33.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                        <Tab closable="false" styleClass="tab-main">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="979.0">
+                                 <children>
+                                    <VBox prefHeight="750.0" prefWidth="979.0" AnchorPane.bottomAnchor="-153.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="40.0" prefWidth="881.0">
+                                             <children>
+                                                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="42.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow color="#f2e3e3" />
+                                                   </effect>
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="SEARCH" size="20" wrappingWidth="17.571428298950195" />
+                                                   </graphic>
+                                                </Label>
+                                                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="783.0" style="-fx-background-color: #fff; -fx-border-color: #ccc; -fx-background-radius: 30px; -fx-border-radius: 30px;" styleClass="lbl2">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <effect>
+                                                      <DropShadow color="#f2e3e3" />
+                                                   </effect>
+                                                   <graphic>
+                                                      <TextField fx:id="Searsh" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="781.0" promptText="Chercher un utilisateur, Username, E-mail, Téléphone" style="-fx-background-color: transparent;" styleClass="menu-bar-search-field">
+                                                         <font>
+                                                            <Font name="Calibri" size="18.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </graphic>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <TableView fx:id="TableUsersView" prefHeight="639.0" prefWidth="979.0">
+                                             <columns>
+                                                <TableColumn fx:id="Ne" prefWidth="60.0" style="-fx-alignment: CENTER;" text="N°" />
+                                                <TableColumn fx:id="username" prefWidth="201.0" style="-fx-alignment: CENTER;" text="Username" />
+                                                <TableColumn fx:id="email" prefWidth="207.0" style="-fx-alignment: CENTER;" text="Adresse E-mail" />
+                                                <TableColumn fx:id="tel" minWidth="0.0" prefWidth="143.0" style="-fx-alignment: CENTER;" text="Téléphone" />
+                                                <TableColumn fx:id="adress" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Adresse" />
+                                                <TableColumn fx:id="dercnx" prefWidth="165.0" style="-fx-alignment: CENTER;" text="Dernière connetion" />
+                                                <TableColumn fx:id="Action" prefWidth="87.0" style="-fx-alignment: CENTER;" text="Action" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </AnchorPane>
          </children>
         </HBox>
     </children>

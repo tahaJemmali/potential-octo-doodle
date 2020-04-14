@@ -10,16 +10,18 @@ package entities;
  * @author USER
  */
 public class Images {
+  
     private int id;
-    private int produit_id;
+    //private int produit_id;
+    private Produit produit;
     private String image;
 
     public int getId() {
         return id;
     }
 
-    public int getProduit_id() {
-        return produit_id;
+    public Produit getProduit() {
+        return produit;
     }
 
     public String getImage() {
@@ -30,8 +32,8 @@ public class Images {
         this.id = id;
     }
 
-    public void setProduit_id(int produit_id) {
-        this.produit_id = produit_id;
+    public void setProduit(Produit p) {
+        this.produit = p;
     }
 
     public void setImage(String image) {
@@ -40,7 +42,7 @@ public class Images {
     
     @Override
     public String toString (){
-        return "ID : "+id+" Produit id : "+produit_id+" Image : "+image;
+        return "ID : "+id+" Produit id : "+produit.toString()+" Image : "+image;
 
     }
     @Override

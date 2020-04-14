@@ -31,7 +31,7 @@ public class ImageService {
     }
         
         public Set<Images> getAllImages_Produit(Produit produit) {
-
+        ProduitService Ps = new ProduitService();
         Set<Images> listM = new HashSet <>();
 
         try {
@@ -43,9 +43,11 @@ public class ImageService {
                 
             while (res.next()) {
                 Images m = new Images();
-
+                Produit p = new Produit();
+                p.setId(res.getInt(2));
+                
                 m.setId(res.getInt(1));
-                m.setProduit_id(res.getInt(2));
+                m.setProduit(Ps.getProduitId(p));
                 m.setImage(res.getString(3));
                 
                // System.out.println(m.toString());

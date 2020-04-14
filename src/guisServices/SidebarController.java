@@ -48,7 +48,9 @@ public class SidebarController implements Initializable {
     
     @FXML
     private void Logout(ActionEvent event) throws IOException {
-        mc.Logout(event);           
+        
+        mc.Logout(event);
+       
     }
     
     @FXML

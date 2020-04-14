@@ -23,8 +23,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -34,7 +37,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.apache.commons.io.FilenameUtils;
+import org.controlsfx.control.Notifications;
 import services.ImageService;
 import services.ProduitService;
 
@@ -63,8 +68,18 @@ public class ContentProduitsModificationController implements Initializable {
     
     @FXML
     private Button imageBtn; 
+    
     @FXML
     private AnchorPane ankpaneIM;
+    
+    @FXML
+    private Label labelref;
+    @FXML
+    private Label labelnom;
+    @FXML
+    private Label labelprix;
+    @FXML
+    private Label labelstock;
     
     private List<File> files;
     
@@ -85,8 +100,14 @@ public class ContentProduitsModificationController implements Initializable {
         
     private int i ;
     
+    private static MainController mc ;
+    
     public static void setProduit(Produit p){
         produit=p;
+    }
+    
+    public static void init(MainController mainController){
+        mc=mainController;
     }
     
     @Override
@@ -95,6 +116,7 @@ public class ContentProduitsModificationController implements Initializable {
         if (produit!=null)
         {setChamps();
         }
+        onBlur();
     }
     
     private void setChamps(){
@@ -176,10 +198,13 @@ public class ContentProduitsModificationController implements Initializable {
         }  
     }
     }
-    
+    @FXML
+    private void listedesproduitsbtn(){
+        mc.PRODUITS();
+    }
     @FXML
     public void modifierBtnAction(){
-       
+       if (!valide()){
        ModifierProduit(getAllFields());
        
        if (files!=null){
@@ -194,10 +219,26 @@ try {
             System.out.println(ex);
         }
        }
-  
-       //redirect all products ;      
+       
+       // alert + redirect all products ;   
+            /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Produit "+produit.getReference()+" est bien modifié");
+            alert.show();*/
+            notification("Confirmation","Produit "+produit.getReference()+" est bien modifié");
+       mc.PRODUITS();
+       }
     }
-    
+    public void notification (String title,String text)
+	{
+		Notifications notif  = Notifications.create();
+		notif.title(title);
+		notif.text(text);
+		notif.graphic(null);
+		notif.hideAfter(Duration.seconds(2));
+		notif.position(Pos.CENTER);
+                notif.showConfirm();
+
+	}
     
     public Produit getAllFields(){
         
@@ -236,7 +277,7 @@ try {
                   String ext = "."+FilenameUtils.getExtension(file.getName());
                   String string = getAlphaNumericString();
                   FileOutputStream ou = new FileOutputStream(imagesPath+"\\Products\\"+string+ext);         
-                  System.out.println("IMAGE FEL WAMP : "+imagesPath+"\\Products\\"+string+ext);
+                  //System.out.println("IMAGE FEL WAMP : "+imagesPath+"\\Products\\"+string+ext);
                   Images image = new Images();
                   image.setImage("Products/"+string+ext);
                   imageService.AjouterImages(produit,image);
@@ -270,4 +311,169 @@ BufferedInputStream bin = new BufferedInputStream(in);
         } 
         return sb.toString(); 
     } 
+    
+    public boolean valide(){
+        ProduitService ps = new ProduitService();
+
+		    	  if (reference.getText().isEmpty())
+        {
+            labelref.setText("*Référence est vide!");
+            reference.setStyle("-fx-border-color: red;");return true;
+        }
+        else if (!reference.getText().matches("^[A-Z0-9 _]*[A-Z0-9][A-Z0-9 _]*$")) // a changerr
+        {   labelref.setText("*Référence invalide !");
+            reference.setStyle("-fx-border-color: red;");  return true;
+        }
+        else if (!ps.getAllProduit().keySet().stream().filter(p->p.getId()!=produit.getId()).noneMatch(p->p.getReference().equals(reference.getText())))
+        {   labelref.setText("*Référence déja existe !");
+            reference.setStyle("-fx-border-color: red;");  return true;
+        }
+        else {
+            reference.setStyle("-fx-border-color: none;");
+            labelref.setText("");
+        }
+                          
+                          if (nom.getText().isEmpty())
+        {
+            labelnom.setText("*Nom est vide!");
+            nom.setStyle("-fx-border-color: red;");return true;
+        }
+        else if (!nom.getText().matches("^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$")) 
+        {   labelnom.setText("*Nom invalide !");
+            nom.setStyle("-fx-border-color: red;");  return true;
+        }
+        else if (!ps.getAllProduit().keySet().stream().filter(p->p.getId()!=produit.getId()).noneMatch(p->p.getName().equals(nom.getText())))
+        {   labelnom.setText("*Nom déja existe !");
+            nom.setStyle("-fx-border-color: red;");  return true;
+        }
+        else {
+            nom.setStyle("-fx-border-color: none;");
+            labelnom.setText("");
+        }
+                          
+                            if (prix.getText().isEmpty())
+        {
+            labelprix.setText("*prix est vide!");
+            prix.setStyle("-fx-border-color: red;");return true;
+        }
+        else if (!prix.getText().matches("^(?=.{0,9}$)^[0-9]*(?:\\.[0-9]*)?$")) 
+        {   labelprix.setText("*prix invalide !");
+            prix.setStyle("-fx-border-color: red;");  return true;
+        }
+        else {
+            prix.setStyle("-fx-border-color: none;");
+            labelprix.setText("");
+        }
+                            
+                            if (stock.getText().isEmpty())
+        {
+            labelstock.setText("*stock est vide!");
+            stock.setStyle("-fx-border-color: red;");return true;
+        }
+        else if (!Valid_4Digit(stock.getText()))  
+        {   labelstock.setText("*stock invalide !");
+            stock.setStyle("-fx-border-color: red;");  return true;
+        }
+        else {
+            stock.setStyle("-fx-border-color: none;");
+            labelstock.setText("");
+        }
+                          
+        return false;
+    }
+    
+    public void onBlur(){
+        ProduitService ps = new ProduitService();
+        
+        reference.focusedProperty().addListener((ov, oldV, newV) -> {
+		      if (!newV) { // focus lost
+		    	 if (reference.getText().isEmpty())
+        {
+            labelref.setText("*Référence est vide!");
+            reference.setStyle("-fx-border-color: red;");
+        }
+        else if (!reference.getText().matches("^[A-Z0-9 _]*[A-Z0-9][A-Z0-9 _]*$")) // a changerr
+        {   labelref.setText("*Référence invalide !");
+            reference.setStyle("-fx-border-color: red;");  
+        }
+        else if (!ps.getAllProduit().keySet().stream().filter(p->p.getId()!=produit.getId()).noneMatch(p->p.getReference().equals(reference.getText())))
+        {   labelref.setText("*Référence déja existe !");
+            reference.setStyle("-fx-border-color: red;");  
+        }
+        else {
+            reference.setStyle("-fx-border-color: none;");
+            labelref.setText("");
+        }
+	}
+	});
+        
+        nom.focusedProperty().addListener((ov, oldV, newV) -> {
+		      if (!newV) { // focus lost
+		    	 if (nom.getText().isEmpty())
+        {
+            labelnom.setText("*Nom est vide!");
+            nom.setStyle("-fx-border-color: red;");
+        }
+        else if (!nom.getText().matches("^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$")) 
+        {   labelnom.setText("*Nom invalide !");
+            nom.setStyle("-fx-border-color: red;"); 
+        }
+        else if (!ps.getAllProduit().keySet().stream().filter(p->p.getId()!=produit.getId()).noneMatch(p->p.getName().equals(nom.getText())))
+        {   labelnom.setText("*Nom déja existe !");
+            nom.setStyle("-fx-border-color: red;"); 
+        }
+        else {
+            nom.setStyle("-fx-border-color: none;");
+            labelnom.setText("");
+        }
+	}
+	});
+        
+        prix.focusedProperty().addListener((ov, oldV, newV) -> {
+		      if (!newV) { // focus lost
+		    	if (prix.getText().isEmpty())
+        {
+            labelprix.setText("*prix est vide!");
+            prix.setStyle("-fx-border-color: red;");
+        }
+        else if (!prix.getText().matches("^(?=.{0,9}$)^[0-9]*(?:\\.[0-9]*)?$")) 
+        {   labelprix.setText("*prix invalide !");
+            prix.setStyle("-fx-border-color: red;");  
+        }
+        else {
+            prix.setStyle("-fx-border-color: none;");
+            labelprix.setText("");
+        }
+	}
+	});
+        
+         stock.focusedProperty().addListener((ov, oldV, newV) -> {
+		      if (!newV) { // focus lost
+		    	if (stock.getText().isEmpty())
+        {
+            labelstock.setText("*stock est vide!");
+            stock.setStyle("-fx-border-color: red;");
+        }
+        else if (!Valid_4Digit(stock.getText())) 
+        {   labelstock.setText("*stock invalide !");
+            stock.setStyle("-fx-border-color: red;");  
+        }
+        else {
+            stock.setStyle("-fx-border-color: none;");
+            labelstock.setText("");
+        }
+	}
+	});
+        
+        
+    }
+    public static boolean Valid_4Digit (String input) {
+		
+		String emailRegex ="^[1-9]{1,4}$" ;
+		
+		Pattern emailPattern = Pattern.compile(emailRegex,Pattern.CASE_INSENSITIVE);
+		Matcher matcher = emailPattern.matcher(input);
+		
+		return matcher.find() ;
+	}
 }

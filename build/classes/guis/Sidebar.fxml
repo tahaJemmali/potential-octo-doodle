@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="sidebar" alignment="TOP_CENTER" maxWidth="498.0" prefHeight="699.0" prefWidth="251.0" styleClass="sidebar" stylesheets="@../stylesheets/stylehseet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.SidebarController">
+<VBox fx:id="sidebar" alignment="TOP_CENTER" maxWidth="498.0" prefHeight="699.0" prefWidth="251.0" styleClass="sidebar" stylesheets="@../stylesheets/stylehseet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.SidebarController">
    <children>
       <Label fx:id="label" opacity="0.0" text="Label" />
       <ImageView disable="true" fitHeight="33.0" fitWidth="43.0" pickOnBounds="true" smooth="false" visible="false">
@@ -108,7 +108,7 @@
                </padding>
                <children>
                   <FontAwesomeIconView fill="#d9d0d0" glyphName="POWER_OFF" size="15" styleClass="sidebar-btn-icon" />
-                  <Label text="LOGOUT" textFill="#b8b1b1">
+                  <Label text="LOG OUT" textFill="#b8b1b1">
                      <font>
                         <Font name="Consolas Bold" size="16.0" />
                      </font>

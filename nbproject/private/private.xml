@@ -3,17 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/LoginService_mdpo_3.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/EditUser.fxml</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/LoginService.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/entities/Images.java</file>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/nbproject/jfx-impl.xml</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ContentUserController.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/MainController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/Login_mdpo_3.fxml</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/stylesheets/stylesheet_login.css</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/services/ImageService.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/velofahd/VeloFahd.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/stylesheets/stylehseet.css</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/ContentProduits.fxml</file>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ContentAreaController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ContentProduitsAjoutController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ContentHomeController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/EditUserController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/LoginService_mdpo_2.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/AddUserController.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ContentProduitsModificationController.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/ContentHome.fxml</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/utils/MyConnection.java</file>
@@ -22,18 +29,19 @@
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/services/UserService.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/Login.fxml</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ContentProduitsController.java</file>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ContentProduits2Controller.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/ContentUsers.fxml</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/utils/Mail.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ImageShowController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/LoginService_mdpo_1.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/entities/Produit.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/Main.fxml</file>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/utils/BCrypt.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/ProfilService.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/ContentArea.fxml</file>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/SidebarController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/ContentProduitsModification.fxml</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/Sidebar.fxml</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guisServices/SidebarController.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/services/ProduitService.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/entities/User.java</file>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/VeloFahd/src/guis/Login2.fxml</file>
         </group>
     </open-files>
 </project-private>

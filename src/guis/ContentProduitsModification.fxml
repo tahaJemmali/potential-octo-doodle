@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -24,14 +25,14 @@
                         <Insets left="10.0" />
                     </HBox.margin>
                     <children>
-                        <Label prefHeight="32.0" prefWidth="302.0" styleClass="lbl2" text="Modification du Produit :" textFill="#757373">
-                            <font>
-                                <Font name="Calibri Bold" size="28.0" />
-                            </font>
-                        </Label>
                         <HBox />
                     </children>
                 </VBox>
+            <Label prefHeight="32.0" prefWidth="302.0" styleClass="lbl2" text="Modification du Produit :" textFill="#757373">
+               <font>
+                  <Font name="Calibri Bold" size="28.0" />
+               </font>
+            </Label>
             <Label fx:id="labelProduit" prefHeight="32.0" prefWidth="270.0" styleClass="lbl2" textFill="#757373">
                <font>
                   <Font name="Calibri Bold" size="28.0" />
@@ -42,6 +43,12 @@
                         <Insets left="20.0" />
                     </HBox.margin>
                 </HBox>
+            <JFXButton onAction="#listedesproduitsbtn" prefHeight="35.0" prefWidth="180.0" styleClass="content-area-circle-btns" text="Liste des produits" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton prefHeight="25.0" prefWidth="56.0" text=" " />
             </children>
             <VBox.margin>
                 <Insets />
@@ -50,57 +57,110 @@
                 <Insets bottom="10.0" top="10.0" />
             </padding>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="336.0" prefWidth="979.0" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER" prefHeight="336.0" prefWidth="979.0" style="-fx-background-color: #f5f5f5;" VBox.vgrow="ALWAYS">
             <VBox.margin>
                 <Insets />
             </VBox.margin>
          <children>
             <AnchorPane fx:id="anchorpane" prefHeight="800.0" prefWidth="1600.0">
                <children>
-                  <VBox prefHeight="653.0" prefWidth="541.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="438.0" AnchorPane.topAnchor="0.0">
+                  <VBox prefHeight="700.0" prefWidth="601.0" spacing="10.0" style="-fx-background-color: #f5f5f5;" AnchorPane.bottomAnchor="-45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="414.0" AnchorPane.topAnchor="0.0">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <Label text="Informations Produit :" />
-                        <Separator prefWidth="200.0" />
-                        <GridPane>
+                        <Label styleClass="CAM" text="Informations Produit :">
+                           <font>
+                              <Font size="20.0" />
+                           </font></Label>
+                        <Separator prefHeight="0.0" prefWidth="838.0" />
+                        <GridPane prefHeight="633.0" prefWidth="557.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="141.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="415.0" minWidth="10.0" prefWidth="380.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="141.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="450.0" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="45.0" minHeight="43.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="46.0" minHeight="14.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="89.0" minHeight="50.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="22.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="58.0" minHeight="50.0" prefHeight="58.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="200.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="55.0" minHeight="50.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.0" minHeight="23.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="207.0" minHeight="200.0" prefHeight="207.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="Réference" />
-                              <Label text="Nom" GridPane.rowIndex="1" />
-                              <Label text="Catégorie" GridPane.rowIndex="2" />
-                              <Label text="Prix" GridPane.rowIndex="3" />
-                              <Label text="Stock" GridPane.rowIndex="4" />
-                              <Label text="Description" GridPane.rowIndex="5" />
-                              <TextField fx:id="reference" prefHeight="25.0" prefWidth="357.0" GridPane.columnIndex="1" />
-                              <TextField fx:id="nom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXComboBox fx:id="categorie" prefHeight="25.0" prefWidth="396.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField fx:id="prix" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField fx:id="stock" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Button fx:id="imageBtn" mnemonicParsing="false" onAction="#imageBtnAction" prefHeight="25.0" prefWidth="397.0" text="Modifier les Images" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <Button mnemonicParsing="false" onAction="#modifierBtnAction" prefHeight="25.0" prefWidth="403.0" text="Modifier Produit" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label styleClass="CAM" text="Réference">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label styleClass="CAM" text="Nom" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label styleClass="CAM" text="Catégorie" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label styleClass="CAM" text="Prix" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label styleClass="CAM" text="Stock" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label styleClass="CAM" text="Description" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <TextField fx:id="reference" prefHeight="25.0" prefWidth="357.0" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></TextField>
+                              <TextField fx:id="nom" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></TextField>
+                              <JFXComboBox fx:id="categorie" focusColor="#0d0d0d" prefHeight="25.0" prefWidth="538.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="prix" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></TextField>
+                              <TextField fx:id="stock" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></TextField>
+                              <TextArea fx:id="description" prefHeight="228.0" prefWidth="415.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></TextArea>
+                              <Button fx:id="imageBtn" mnemonicParsing="false" onAction="#imageBtnAction" prefHeight="38.0" prefWidth="468.0" text="Modifier les images" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" onAction="#modifierBtnAction" prefHeight="38.0" prefWidth="502.0" text="Modifier produit" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="labelref" prefHeight="17.0" prefWidth="482.0" style="-fx-text-fill: red;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="labelnom" prefHeight="17.0" prefWidth="507.0" style="-fx-text-fill: red;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="labelprix" prefHeight="17.0" prefWidth="498.0" style="-fx-text-fill: red;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label fx:id="labelstock" prefHeight="17.0" prefWidth="486.0" style="-fx-text-fill: red;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                            </children>
                         </GridPane>
                      </children>
                   </VBox>
                   <VBox layoutX="740.0" layoutY="17.0" prefHeight="620.0" prefWidth="268.0">
                      <children>
-                        <AnchorPane fx:id="ankpaneIM" prefHeight="597.0" prefWidth="270.0" />
+                        <AnchorPane fx:id="ankpaneIM" prefHeight="618.0" prefWidth="268.0" />
                      </children></VBox>
                   <VBox layoutX="986.0" layoutY="2.0" prefHeight="653.0" prefWidth="29.0" />
                </children>

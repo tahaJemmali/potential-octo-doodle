@@ -60,6 +60,13 @@
     /*-fx-opacity: 0.5;*/
 }
 
+.Correct-credentials
+{
+    -jfx-unfocus-color: #50C878;
+    -jfx-focus-color: #50C878;
+   
+}
+
 /*Main Screen CSS Styling starts here*/
 
 /*TablPane styling*/
