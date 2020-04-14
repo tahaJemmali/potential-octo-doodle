@@ -445,4 +445,15 @@ menuBtn.setStyle(
     public static void init(ContentHomeController c){
         chc =c ;
     }
+
+    public void EVENT() {
+                try {
+            Parent contentusers = FXMLLoader.load(getClass().getResource("/guis/event.fxml"));
+            border_pane.setCenter(contentusers);
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
 }

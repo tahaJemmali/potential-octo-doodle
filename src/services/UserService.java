@@ -231,7 +231,7 @@ public class UserService {
 
             pre.executeUpdate();
 
-            System.out.println("user ajouté !");
+            System.out.println("user ajoutï¿½ !");
 
         } catch (SQLException ex) {
             System.out.println(ex);

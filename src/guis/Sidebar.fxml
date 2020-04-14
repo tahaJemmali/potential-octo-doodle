@@ -170,7 +170,7 @@
             </HBox>
          </graphic>
       </Button>
-      <Button mnemonicParsing="false" styleClass="buttons_sidebar">
+      <Button mnemonicParsing="false" onAction="#open_ContentEvent" styleClass="buttons_sidebar">
          <graphic>
             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="235.0" styleClass="sidebar-btn">
                <padding>
