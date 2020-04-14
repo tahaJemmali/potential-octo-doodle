@@ -40,7 +40,7 @@ public class EventService {
      
     
     public List<Evenement> getAll() {
-
+//System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         List<Evenement> listP = new ArrayList<>();
 
         try {
@@ -51,17 +51,30 @@ public class EventService {
 
             while (res.next()) {
                
+              /*  System.out.println(res.getInt(1));
+                System.out.println(res.getString(2));
+                System.out.println(res.getString(3));
+                System.out.println(res.getString(4));
+                
+                System.out.println(res.getDate(5).toLocalDate());
+                
+                System.out.println(res.getDate(6).toLocalDate());
+                System.out.println(res.getInt(7));
+                System.out.println(res.getString(8));
+                System.out.println(res.getInt(9));*/
+                
                 Evenement e = new Evenement();
                 e.setId(res.getInt(1));
-                e.setTitre(res.getString(2));
-                e.setDescription(res.getString(3));
-                e.setImage(res.getString(4));
-                e.setDate_debut(res.getDate(5).toLocalDate());
-                e.setDate_creation(res.getDate(6).toLocalDate());
-                e.setMax_participant(res.getInt(7));
-                e.setLocation(res.getString(8));
-                e.setScore_id(res.getInt(9));
-
+                e.setTitre(res.getString(3));
+                e.setDescription(res.getString(4));
+                e.setImage(res.getString(5));
+                e.setDate_debut(res.getDate(6).toLocalDate());
+                e.setDate_creation(res.getDate(7).toLocalDate());
+                e.setMax_participant(res.getInt(8));
+                e.setLocation(res.getString(9));
+                e.setScore_id(res.getInt(2));
+                
+                
                 listP.add(e);
             }
         } catch (SQLException ex) {
@@ -133,7 +146,7 @@ int id=6;
                     SupprimerImage(id);
           //////UPLOAD IMAGE
         String newName="uploads/"+randomIdentifier()+"."+ FilenameUtils.getExtension((String) o);
-         String PathTo= "C:/wamp64/www/velo/web/"+newName ; 
+         String PathTo= "C:/wamp64/www/integrationvelo/web/"+newName ; 
         Files.copy(Paths.get((String) o), Paths.get(PathTo), StandardCopyOption.REPLACE_EXISTING);
         /////
         o=newName;
@@ -244,7 +257,7 @@ int a3=-1;
                         }
    
            try{
-      File file = new File("C:/wamp64/www/velo/web/"+image);
+      File file = new File("C:/wamp64/www/integrationvelo/web/"+image);
 
       if(file.delete()){
        System.out.println(file.getName() + " est supprimé.");

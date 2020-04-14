@@ -67,7 +67,7 @@ public class AddEventController implements Initializable {
     @FXML
     private JFXTextField location;
 
-    final String web_path = "http://localhost/velo/web/velo/uploads/";
+    final String web_path = "http://localhost/integrationvelo/web/";
     public static Stage stage;
 
     private EventService eventService;
@@ -135,7 +135,7 @@ public class AddEventController implements Initializable {
         /////////////////////////XCalander
            //////UPLOAD IMAGE
         String newName="uploads/"+randomIdentifier()+"."+ FilenameUtils.getExtension(imageFile);
-         String PathTo= "C:/wamp64/www/velo/web/"+newName ; 
+         String PathTo= "C:/wamp64/www/integrationvelo/web/"+newName ; 
         Files.copy(Paths.get(imageFile), Paths.get(PathTo), StandardCopyOption.REPLACE_EXISTING);
         /////
         Evenement e=new Evenement(titre.getText(),description.getText(),newName,date_debut.getValue(),LocalDate.now(),Integer.parseInt(max.getText()),location.getText());

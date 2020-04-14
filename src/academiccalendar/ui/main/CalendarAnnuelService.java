@@ -54,15 +54,17 @@ public class CalendarAnnuelService {
             rs = ste.executeQuery(req);
             while (rs.next()) {
                 Evenement e = new Evenement();
+                
                 e.setId(rs.getInt(1));
-                e.setTitre(rs.getString(2));
-                e.setDescription(rs.getString(3));
-                e.setImage(rs.getString(4));
-                e.setDate_debut(rs.getDate(5).toLocalDate());
-                e.setDate_creation(rs.getDate(6).toLocalDate());
-                e.setMax_participant(rs.getInt(7));
-                e.setLocation(rs.getString(8));
-                e.setScore_id(rs.getInt(9));
+                e.setTitre(rs.getString(3));
+                e.setDescription(rs.getString(4));
+                e.setImage(rs.getString(5));
+                e.setDate_debut(rs.getDate(6).toLocalDate());
+                e.setDate_creation(rs.getDate(7).toLocalDate());
+                e.setMax_participant(rs.getInt(8));
+                e.setLocation(rs.getString(9));
+                e.setScore_id(rs.getInt(2));
+                
                   list.add(e);
             }
         } catch (SQLException ex) {

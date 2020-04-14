@@ -77,7 +77,7 @@ public class ContentEventController implements Initializable {
     private EventService eventService;
     private List<Evenement> ListEvents;
     private static Evenement event;
-    final String web_path = "http://localhost/velo/web/";
+    final String web_path = "http://localhost/integrationvelo/web/";
 
     ObservableList<ModelEventTable> oblist = FXCollections.observableArrayList();
 
@@ -184,6 +184,7 @@ public class ContentEventController implements Initializable {
         float moyenne;
         int[] score = {};
         for (Evenement e : ListEvents) {
+            System.out.println(web_path + e.getImage());
             ImageView img = new ImageView(new Image(web_path + e.getImage(), true));
             img.setFitWidth(400);
             img.setFitHeight(200);

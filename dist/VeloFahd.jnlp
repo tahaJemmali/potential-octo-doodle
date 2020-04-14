@@ -8,13 +8,15 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="VeloFahd.jar" size="50756150" download="eager" />
+    <jar href="VeloFahd.jar" size="51090373" download="eager" />
     <jar href="lib\commons-collections4-4.3.jar" size="753996" download="eager" />
     <jar href="lib\commons-io-2.6.jar" size="214788" download="eager" />
     <jar href="lib\controlsfx-8.40.15.jar" size="1402490" download="eager" />
     <jar href="lib\curvesapi-1.06.jar" size="111875" download="eager" />
+    <jar href="lib\derby.jar" size="3230946" download="eager" />
     <jar href="lib\dom4j.jar" size="508934" download="eager" />
     <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\itextpdf-5.0.6.jar" size="1613319" download="eager" />
     <jar href="lib\javax.mail.jar" size="659033" download="eager" />
     <jar href="lib\jfoenix-8.0.4.jar" size="2487326" download="eager" />
     <jar href="lib\jna-3.5.2.jar" size="692070" download="eager" />
@@ -24,12 +26,9 @@
     <jar href="lib\platform-3.5.2.jar" size="1192357" download="eager" />
     <jar href="lib\poi-4.1.0.jar" size="2754042" download="eager" />
     <jar href="lib\poi-ooxml-4.1.0.jar" size="1793185" download="eager" />
+    <jar href="lib\poi-ooxml-schemas-4.1.0.jar" size="7784293" download="eager" />
     <jar href="lib\vlcj-3.0.1.jar" size="333718" download="eager" />
     <jar href="lib\xmlbeans-3.1.0.jar" size="2579738" download="eager" />
-    <jar href="lib\derby.jar" size="3230946" download="eager" />
-    <jar href="lib\gembox-spreadsheet.jar" size="11605746" download="eager" />
-    <jar href="lib\itextpdf-5.0.6.jar" size="1613319" download="eager" />
-    <jar href="lib\poi-ooxml-schemas-4.1.0.jar" size="7784293" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="VeloFahd" >
     <param name="requiredFXVersion" value="8.0+"/>

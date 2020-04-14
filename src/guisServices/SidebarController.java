@@ -93,7 +93,10 @@ public class SidebarController implements Initializable {
         //}
         	              
     }
-    
+    @FXML
+    private void open_ContentEvent(ActionEvent event) {
+        mc.EVENT();
+    }
 }
 
 
