@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="content_area" prefHeight="639.0" prefWidth="979.0" stylesheets="@../stylesheets/stylehseet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guisServices.ContentReparationController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1600.0" style="-fx-background-color: #fff;">
+            <children>
+                <VBox alignment="CENTER_LEFT">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                    <children>
+                        <Label styleClass="lbl2" text="Customer Service Representative" textFill="#757373">
+                            <font>
+                                <Font name="Calibri Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <HBox>
+                            <children>
+                                <Label styleClass="lbl2" text="San Francisco, CA" textFill="#757373">
+                                    <font>
+                                        <Font name="Calibri Bold" size="16.0" />
+                                    </font>
+                                    <graphic>
+                                    </graphic>
+                                </Label>
+                                <Label layoutX="10.0" layoutY="10.0" styleClass="lbl3" text="Preview this post" textFill="#00a1ff" underline="true">
+                                    <font>
+                                        <Font name="Calibri Bold" size="16.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" styleClass="content-area-circle-btns" text="Open">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                        <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="41.0" styleClass="content-area-circle-btns" text="Button">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <graphic>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="HOME" size="20" wrappingWidth="5.0" />
+                     </graphic>
+                        </JFXButton>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="493.0" prefWidth="979.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+         <children>
+            <TableView fx:id="table_reparation" prefHeight="561.0" prefWidth="910.0">
+              <columns>
+                <TableColumn fx:id="id_client" prefWidth="96.0" style="-fx-alignment: CENTER;" text="#" />
+                <TableColumn fx:id="id" prefWidth="87.0" style="-fx-alignment: CENTER;" text="id" />
+                  <TableColumn fx:id="date_depot" prefWidth="151.0" style="-fx-alignment: CENTER;" text="date_depot" />
+                  <TableColumn fx:id="etat" prefWidth="176.0" style="-fx-alignment: CENTER;" text="etat" />
+                  <TableColumn fx:id="action" prefWidth="166.0" text="Actions" />
+              </columns>
+            </TableView>
+            <AnchorPane prefHeight="533.0" prefWidth="304.0">
+               <children>
+                  <Button fx:id="createRep" layoutY="80.0" mnemonicParsing="false" onAction="#display" prefHeight="80.0" prefWidth="430.0" text="Créer une réparation">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Button>
+                  <Button fx:id="createUser" mnemonicParsing="false" onAction="#createUserWindow" prefHeight="80.0" prefWidth="430.0" text="Créer un nouveau compte">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Button>
+                  <Button layoutY="595.0" mnemonicParsing="false" onAction="#refresh" prefHeight="80.0" prefWidth="430.0" text="Refresh">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Button>
+                  <ImageView fx:id="image" fitHeight="429.0" fitWidth="430.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/reparation.jpg" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+         </children>
+        </HBox>
+    </children>
+</VBox>

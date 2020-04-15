@@ -455,5 +455,15 @@ menuBtn.setStyle(
         }
     }
     
+    public void REPARATIONS()
+    {
+        try {
+            Parent contentusers = FXMLLoader.load(getClass().getResource("/guis/ContentReparation.fxml"));
+            border_pane.setCenter(contentusers);
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     
 }

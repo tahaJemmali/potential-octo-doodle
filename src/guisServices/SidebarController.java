@@ -97,6 +97,10 @@ public class SidebarController implements Initializable {
     private void open_ContentEvent(ActionEvent event) {
         mc.EVENT();
     }
+    @FXML
+    private void open_ContentReparation(ActionEvent event) {
+        mc.REPARATIONS();
+    }
 }
 
 

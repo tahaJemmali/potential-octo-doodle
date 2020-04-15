@@ -190,15 +190,15 @@
             </HBox>
          </graphic>
       </Button>
-      <Button mnemonicParsing="false" styleClass="buttons_sidebar">
+      <Button mnemonicParsing="false" onAction="#open_ContentReparation" styleClass="buttons_sidebar">
          <graphic>
             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="235.0" styleClass="sidebar-btn">
                <padding>
                   <Insets left="20.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="#d9d0d0" glyphName="LOCATION_ARROW" size="15" styleClass="sidebar-btn-icon" />
-                  <Label text="LOCATIONS" textFill="#b8b1b1">
+                  <FontAwesomeIconView fill="#d9d0d0" glyphName="GEARS" size="15" styleClass="sidebar-btn-icon" />
+                  <Label text="REPARATION" textFill="#b8b1b1">
                      <font>
                         <Font name="Consolas Bold" size="16.0" />
                      </font>
@@ -217,8 +217,8 @@
                   <Insets left="20.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="#d9d0d0" glyphName="GEARS" size="15" styleClass="sidebar-btn-icon" />
-                  <Label text="REPARATION" textFill="#b8b1b1">
+                  <FontAwesomeIconView fill="#d9d0d0" glyphName="LOCATION_ARROW" size="15" styleClass="sidebar-btn-icon" />
+                  <Label text="LOCATIONS" textFill="#b8b1b1">
                      <font>
                         <Font name="Consolas Bold" size="16.0" />
                      </font>

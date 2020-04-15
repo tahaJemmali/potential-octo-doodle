@@ -289,5 +289,28 @@ public class UserService {
             System.out.println(ex);
         }
     }
-    
+    public void addUser(User u){
+        try {
+
+            String req = "INSERT INTO USER ( username, username_canonical, email,email_canonical,enabled,password,roles, address, phone) values (?,?,?,?,?,?,?,?,?)";
+
+            pre = cnx.prepareStatement(req);
+
+            pre.setString(1,u.getUsername());
+            pre.setString(2,u.getUsername());
+            pre.setString(3,u.getEmail());
+            pre.setString(4,u.getEmail());
+            pre.setInt(5,u.getEnabled());
+            pre.setString(6,u.getPassword());
+            pre.setString(7,u.getRoles());
+            pre.setString(8,u.getAddress());
+            pre.setInt(9,u.getPhone());
+
+            pre.executeUpdate();
+
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
 }
